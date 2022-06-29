@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+	<style>
+	    #submit {
+			position: absolute;
+			color:white;
+			background-color: darkblue;
+			left: 600px;
+			top: 605px;
+			padding: 15px 35px;
+			font-weight: bold;
+			border-radius: 40px;
+			cursor: pointer;
+		}
+		#cbox {
+			position: absolute;
+			left: 540px;
+			top: 555px;
+		}
+		#paratnc {
+			position: absolute;
+			left: 568px;
+			top: 540px;
+		}
+		#bg {
+  position: fixed; 
+  top: 0px; 
+  left: 370px; 
+  height: 600px;
+}
+	</style>
+	
+	<script>
+		function disbut()
+		{
+			document.getElementById("submit").disabled=true;
+			submit.style.backgroundColor = "#6D50FE";
+			document.getElementById("submit").style.cursor= "auto";
+	
+		}
+	
+		function actbut(element)
+		{
+			if(element.checked)
+			{
+				document.getElementById("submit").disabled=false;
+				submit.style.backgroundColor = "#00008B";
+				document.getElementById("submit").style.cursor= "pointer";
+			
+			}
+			else
+			{
+				document.getElementById("submit").disabled=true;
+				submit.style.backgroundColor = "#6D50FE";
+	            document.getElementById("submit").style.cursor= "auto";
+				
+			}
+	
+		}
+	</script>
+	</head>
+<body onload="disbut()" style="background-color:#72C8D5;">
+	<img src="C:\Users\Ameya.Date\Desktop\Spin2Win\ntnc.jpg" id="bg" alt="tnc">
+<input type="checkbox" name="cbox" id="cbox" onchange="actbut(this)"><br><br>
+<p id="paratnc"><strong>I Agree the Terms and Conditions</strong><br>
+<a href="www.google.com">Terms & Conditions</a></p>
+<button name="submit" id="submit" onclick="location.href='C:/Users/Ameya.Date/Desktop/Spin2Win/spinpage.html'">
+	Proceed
+</button>
+</body>
+</html>

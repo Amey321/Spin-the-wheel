@@ -1,0 +1,237 @@
+<html>
+<head>
+<style>
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+body {
+    font-family: open Sans;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background: skyblue;
+}
+.popup {
+    border: 5px solid black;
+    position: absolute;
+    color: black;
+    background-color: violet;
+    left: 350px;
+	top: 200px;
+	padding: 80px 80px;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-break: loose;
+    visibility: hidden;
+}
+.wheel {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+.in {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    border: 10px solid white;
+    overflow: hidden;
+    transition: all ease 10s;
+}
+span {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+}
+.spa {
+    clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    background-color: green;
+    top: 120px;
+    left: 0;
+}
+.spb {
+    clip-path: polygon(100% 92%, 0% 50%, 100% 8%);
+    background-color: yellow;
+    top: 120px;
+    right: 0;
+}
+
+.spc {
+    clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+    background-color: palevioletred;
+    bottom: 0;
+    left: 120px;
+}
+
+.spd {
+    clip-path: polygon(50% 100%, 92% 0, 8% 0);
+    background-color: orange;
+    top: 0;
+    left: 120px;
+}
+.in2 {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-135deg);
+}
+#but {
+    
+			position: absolute;
+            color: white;
+			background-color: darkblue;
+			left: 600px;
+			top: 605px;
+			padding: 10px 30px;
+			font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+.cen {
+    position: absolute;
+    background-color: white;
+    color: darkblue;
+    left: 645px;
+	top: 290px;
+    height: 80px;
+    width: 80px;
+	padding: 20px;
+	font-weight: bold;
+    border-radius: 80%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+            
+}
+.ar {
+			position: absolute;
+            color: white;
+			background-color: skyblue;
+			left: 970px;
+			top: 317px;
+			padding: 10px 100px;
+			font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            border: none;
+}
+.apol {
+            position: absolute;
+            clip-path: polygon(100% 85%, 77% 93%, 100% 100%);
+			background-color: skyblue;
+			left: 620px;
+			bottom: 300px;
+            padding: 200px 200px;
+            border: none;
+
+}
+span b {
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    font-size: 26px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+
+}
+</style>
+</head>
+<body>
+<div class="wheel">
+    <div class="in" id="in">
+        <div class="in1">
+            <span class="spa"><b>100</b></span>
+            <span class="spb"><b>200</b></span>
+            <span class="spc"><b>1000</b></span>
+            <span class="spd"><b>10</b></span>
+        </div>
+        
+        <div class="in2">
+            <span class="spa"><b>50</b></span>
+            <span class="spb"><b>70</b></span>
+            <span class="spc"><b>88</b></span>
+            <span class="spd"><b>5000</b></span>
+        </div>
+    </div>
+</div>
+<div class="popup" id="popup">
+    <p id="p1">Hey how are youuuuu </p><br><br>
+    <button class="playagain" id="playagain" style="background-color: green; border-color: black; cursor: pointer; color:white; border-radius: 50px; padding: 15px 15px;" onclick="location.href='C:/Users/Ameya.Date/Desktop/Spin2Win/spinpage.html'"> Play Again </button>
+</div>
+<button class="cen" id="cen">SPIN</button>
+<button class="ar" id="ar"></button>
+<button class="apol" id="apol"></button>
+<button id="but" onclick="disbut()"><strong>Spin The Wheel</strong></button>
+<script>
+    
+    function disbut()
+    {
+        document.getElementById("but").disabled = true;
+        document.getElementById("but").style.cursor= "auto";
+        but.style.backgroundColor = '#6D50FE';
+        ar.style.backgroundColor = '#000000';
+        apol.style.backgroundColor = '#000000';
+        var x=1024;
+        var y=9999;
+        var deg=Math.round(Math.random() * (x-y)) +y;
+        var doo=deg%360;
+        var fii=Math.round(doo/22.5);
+        var result;
+        
+        if(doo<=22.5 || doo>=337.5)
+        {
+            result=200;
+        }
+        if(doo>=22.5 && doo<=67.5)
+        {
+            result=88;
+        }
+        if(doo>=67.5 && doo<=112.5)
+        {
+            result=10;
+        }
+        if(doo>=112.5 && doo<=157.5)
+        {
+            result=70;
+        }
+        if(doo>=157.5 && doo<=202.5)
+        {
+            result=100;
+        }
+        if(doo>=202.5 && doo<=247.5)
+        {
+            result=5000;
+        }
+        if(doo>=247.5 && doo<=292.5)
+        {
+            result=1000;
+        }
+        if(doo>=292.5 && doo<=337.5)
+        {
+            result=50;
+        }
+        console.log(doo);
+        console.log(fii);
+        console.log(result);
+        document.getElementById('in').style.transform="rotate("+deg+"deg)";
+        setTimeout(function() {
+            document.getElementById("p1").innerHTML="Hurray!!! You Won "+result+" Points";
+            document.getElementById("popup").style.visibility="visible";
+            document.getElementById("cen").style.visibility="hidden";
+        },11000);
+    }
+</script>
+</body>
+</html>
